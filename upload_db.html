@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Set List{% endblock%}
+{% block content %}
+<style>
+    form{
+        margin: 0 auto;
+        width: 25%;
+    }
+    input{
+        padding-top: 4px;
+    }
+    input[type=submit]{
+        margin-top: 5px;
+        line-height: 13px
+    }
+</style>
+
+<div class="content2" style="text-align: center">
+    <h1>Upload to db</h1>
+</div>
+
+<form method="POST" enctype='multipart/form-data'>
+    {% csrf_token %}
+    {{ form }}
+    <input type="file" id="dataFile" name="Project Data" accept=".csv, .xlsx" style="float: left;">
+    <input type="submit" value="Submit File" style="float: right;">
+    <p style="opacity: 0">bock</p>
+</form>
+{% endblock %}
